@@ -4,20 +4,9 @@ const scoreDisplay = document.getElementById('score');
 let score = 0;
 let isJumping = false;
 
-document.addEventListener('keydown', function(event) {
-    if (event.code === 'Space' && !isJumping) {
-        jump();
-    }
-});
-
-// Adiciona suporte para toque na tela
-document.addEventListener('touchstart', function() {
-    if (!isJumping) {
-        jump();
-    }
-});
-
+// Função para pular
 function jump() {
+    if (isJumping) return; // Impede múltiplos pulos
     isJumping = true;
     dino.style.bottom = '80px';
     setTimeout(() => {
@@ -26,6 +15,15 @@ function jump() {
     }, 300);
 }
 
+// Eventos de teclado e toque
+document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space') {
+        jump();
+    }
+});
+document.addEventListener('touchstart', jump);
+
+// Loop do jogo
 const gameLoop = setInterval(() => {
     const cactusPosition = cactus.offsetLeft;
     const dinoPosition = parseInt(window.getComputedStyle(dino).getPropertyValue('bottom'));
