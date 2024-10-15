@@ -36,7 +36,7 @@ body {
     width: 20px;
     height: 40px;
     background-color: #dc3545;
-    animation: move 2s infinite linear;
+    animation: move 2s linear infinite;
 }
 
 @keyframes move {
