@@ -2,8 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Fundo claro */
-    color: #333; /* Texto escuro */
+    background-color: #000; /* Fundo preto */
+    color: #fff; /* Texto branco */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,10 +12,7 @@ body {
 }
 
 .container {
-    background-color: white; /* Fundo branco para a caixa */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .emoji {
@@ -23,19 +20,16 @@ body {
     margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 48px;
-    margin: 0;
+.error-code {
+    font-size: 120px; /* Tamanho maior para o código de erro */
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3); /* Sombra para destaque */
 }
 
-h2 {
+.message {
     font-size: 24px;
     margin: 10px 0;
-}
-
-p {
-    font-size: 16px;
-    margin: 20px 0;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.2); /* Sombra para destaque */
 }
 
 .btn {
@@ -46,6 +40,7 @@ p {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+    margin-top: 20px;
 }
 
 .btn:hover {
