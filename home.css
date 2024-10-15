@@ -1,4 +1,3 @@
-/* Estilos gerais */
 body, html {
   margin: 0;
   padding: 0;
@@ -9,105 +8,127 @@ body, html {
   background-attachment: fixed;
   color: #ffffff;
   text-align: center;
-  overflow: hidden;
+  overflow: hidden; /* Evita rolagem devido à animação */
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Estilos da Navbar */
+/* Estilo da barra de tarefas */
 .navbar {
-  background-color: #333;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  z-index: 1000;
+  height: 60px;
+  background-color: #007bff; /* Azul */
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  color: #ffffff;
+  justify-content: space-between; /* Ajusta a posição dos itens */
 }
 
-.menu-icon {
-  font-size: 24px;
+.navbar .menu-icon {
+  font-size: 1.5em;
+  color: #ffffff;
   cursor: pointer;
 }
 
-.logo {
-  font-size: 24px;
+.navbar .logo {
+  color: #ffffff;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
-.theme-toggle {
+.navbar .theme-toggle {
   background: none;
   border: none;
-  color: white;
-  font-size: 20px;
+  color: #ffffff;
+  font-size: 1.5em;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Estilos da Sidebar */
 .sidebar {
-  background-color: #222;
-  color: white;
   position: fixed;
   top: 0;
-  right: -250px;
+  right: 0;
   width: 250px;
   height: 100%;
-  padding: 20px;
-  transition: right 0.3s ease;
+  background-color: #007bff;
+  color: #ffffff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease, background-color 0.3s;
   z-index: 1001;
+  padding: 20px;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .sidebar.active {
-  right: 0;
+  transform: translateX(0);
 }
 
 .sidebar a {
-  color: white;
+  display: block;
+  color: #ffffff;
   text-decoration: none;
   margin: 10px 0;
-  display: block;
   font-size: 1.2em;
+  transition: color 0.3s;
 }
 
-/* Estilos da Hero Section */
+.sidebar a:hover {
+  color: #ddd;
+}
+
+.sidebar .icon {
+  margin-right: 10px;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: calc(100vh - 60px); /* Ajusta a altura para não sobrepor a barra */
   padding: 20px;
 }
 
 .hero h2 {
-  font-size: 50px;
-  color: #ffffff; /* Cor branca */
-  margin-bottom: 5px; /* Espaçamento entre o título e subtítulo reduzido */
+  font-size: 2em;
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out 0.5s forwards;
 }
 
 .hero h1 {
-  color: #2f5df5; /* Cor do nome Akon */
-  font-size: 90px; /* Ajustado para deixar as palavras mais próximas */
-  margin-bottom: 10px; /* Espaçamento reduzido */
+  margin: 10px 0;
+  color: #007bff;
+  font-size: 8em;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out 1s forwards, shakeVertical 2s ease-in-out 1s infinite;
 }
 
 .hero p {
-  font-size: 30px; /* Ajustado para deixar as palavras mais próximas */
-  color: #ffffff; /* Cor branca */
-  margin-top: -5px; /* Aproximação do texto com o título */
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out 1.5s forwards;
 }
 
 .buttons {
-  margin-top: 10px; /* Diminuição do espaçamento entre os botões e textos */
+  margin-top: 30px;
   display: flex;
-  gap: 10px; /* Aproximação dos botões */
+  gap: 20px;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -118,14 +139,79 @@ body, html {
   font-weight: bold;
   color: #fff;
   text-decoration: none;
+  display: inline-block;
+  transition: transform 0.6s, box-shadow 0.6s; /* Aumento do tempo da animação */
 }
 
 .btn-blue {
   background-color: #007bff;
+  animation: shakeHorizontalLeft 4s ease-in-out infinite;
 }
 
 .btn-green {
   background-color: #28a745;
+  animation: shakeHorizontalRight 4s ease-in-out infinite;
+}
+
+.btn-blue:hover, .btn-green:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shakeVertical {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shakeHorizontalLeft {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-10px); }
+}
+
+@keyframes shakeHorizontalRight {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 4em;
+  }
+
+  .hero h2 {
+    font-size: 1.5em;
+  }
+
+  .hero p {
+    font-size: 1.2em;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navbar {
+    padding: 0 10px;
+  }
+
+  .navbar .logo {
+    font-size: 1.2em;
+  }
+
+  .navbar .theme-toggle {
+    font-size: 1.2em;
+    margin-right: 10px;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
 }
 
 /* Modo escuro */
@@ -148,31 +234,4 @@ body, html {
 
 .dark-mode .sidebar a:hover {
   color: #bbb;
-}
-
-/* Media Queries para mobile */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 3em;
-  }
-
-  .hero h2 {
-    font-size: 1.5em;
-  }
-
-  .hero p {
-    font-size: 1.2em;
-  }
-
-  .navbar {
-    padding: 0 10px;
-  }
-
-  .navbar .logo {
-    font-size: 1.2em;
-  }
-
-  .sidebar {
-    width: 200px;
-  }
 }
