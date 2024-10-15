@@ -9,7 +9,7 @@ body {
     align-items: center;
     height: 100vh;
     text-align: center;
-    overflow: hidden; /* Para evitar barras de rolagem */
+    overflow: hidden;
 }
 
 .container {
