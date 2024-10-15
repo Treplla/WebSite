@@ -55,7 +55,7 @@ body, html {
   color: white;
   position: fixed;
   top: 0;
-  right: -250px; /* Correção para esconder totalmente */
+  right: -250px;
   width: 250px;
   height: 100%;
   padding: 20px;
@@ -87,24 +87,27 @@ body, html {
 }
 
 .hero h2 {
-  font-size: 60px;
-  color: #ffffff;
+  font-size: 50px;
+  color: #00faff; /* Cor azul */
+  margin-bottom: 10px; /* Espaçamento entre o título e subtítulo */
 }
 
 .hero h1 {
-  color: #00faff;
-  font-size: 120px;
+  color: #00faff; /* Cor azul */
+  font-size: 100px;
+  margin-bottom: 20px; /* Diminuição do espaço */
 }
 
 .hero p {
-  font-size: 40px;
-  color: #ffffff;
+  font-size: 35px;
+  color: #00faff; /* Cor azul */
+  margin-top: -10px; /* Aproximação do texto com o título */
 }
 
 .buttons {
-  margin-top: 30px;
+  margin-top: 20px; /* Diminuição do espaçamento entre os botões e textos */
   display: flex;
-  gap: 20px;
+  gap: 10px; /* Aproximação dos botões */
   justify-content: center;
 }
 
