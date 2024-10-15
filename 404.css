@@ -9,28 +9,14 @@ body {
     align-items: center;
     height: 100vh;
     text-align: center;
-    animation: fadeIn 1s; /* Animação de entrada */
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    overflow: hidden; /* Para evitar barras de rolagem */
 }
 
 .container {
+    position: relative;
     padding: 20px;
     border-radius: 15px; /* Cantos arredondados */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
-    transition: transform 0.3s; /* Efeito de hover */
-}
-
-.container:hover {
-    transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
-}
-
-.emoji {
-    width: 100px; /* Tamanho do emoji */
-    margin-bottom: 20px;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.2); /* Sombra para destaque */
 }
 
 .error-code {
@@ -59,4 +45,16 @@ body {
 .btn:hover {
     background-color: #0056b3;
     transform: scale(1.1); /* Aumenta levemente ao passar o mouse */
+}
+
+/* Estrelas */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.postimg.cc/3x6y3K9M/stars.png') repeat; /* Imagem de estrelas */
+    opacity: 0.1; /* Transparência das estrelas */
+    pointer-events: none; /* Não interagir com as estrelas */
 }
