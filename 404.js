@@ -36,5 +36,12 @@ const gameLoop = setInterval(() => {
     } else if (cactusPosition < 0) {
         score++;
         scoreDisplay.innerHTML = 'Pontuação: ' + score;
+        // Reinicia a posição do cacto para que ele reapareça
+        cactus.style.right = '100%'; 
+        cactus.style.animation = 'none'; // Para parar a animação
+        setTimeout(() => {
+            cactus.style.animation = ''; // Reinicia a animação
+            cactus.style.right = '-50px'; // Reseta a posição
+        }, 10);
     }
 }, 100);
