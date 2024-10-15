@@ -36,7 +36,7 @@ const gameLoop = setInterval(() => {
     } else if (cactusPosition < 0) {
         score++;
         scoreDisplay.innerHTML = 'Pontuação: ' + score;
-        // Reinicia a posição do cacto para que ele reapareça
+        // Reinicia a posição do cacto
         cactus.style.right = '100%'; 
         cactus.style.animation = 'none'; // Para parar a animação
         setTimeout(() => {
