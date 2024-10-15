@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #f4f4f9; /* Plano de fundo claro padrão */
 }
 
 /* Estilos da Navbar */
@@ -14,8 +15,10 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  position: relative;
-  z-index: 1;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .menu-icon {
@@ -36,7 +39,6 @@ body {
   cursor: pointer;
   position: relative;
   right: -30px; /* Ajuste aqui para mover o botão para a frente */
-  z-index: 10;
 }
 
 .theme-toggle i {
@@ -54,6 +56,7 @@ body {
   height: 100%;
   padding: 20px;
   transition: left 0.3s ease;
+  z-index: 999; /* Garante que a sidebar fique acima do conteúdo principal */
 }
 
 .sidebar.active {
@@ -83,6 +86,7 @@ body {
   color: white;
   text-align: center;
   padding: 0 20px;
+  margin-top: 50px; /* Para garantir que o conteúdo não fique por baixo da navbar */
 }
 
 .hero h1 {
