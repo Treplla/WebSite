@@ -89,23 +89,23 @@ body, html {
 .hero h2 {
   font-size: 50px;
   color: #ffffff; /* Cor branca */
-  margin-bottom: 10px; /* Espaçamento entre o título e subtítulo */
+  margin-bottom: 5px; /* Espaçamento entre o título e subtítulo reduzido */
 }
 
 .hero h1 {
-  color: #1644db; /* Cor do nome Akon */
-  font-size: 100px;
-  margin-bottom: 20px; /* Diminuição do espaço */
+  color: #2f5df5; /* Cor do nome Akon */
+  font-size: 90px; /* Ajustado para deixar as palavras mais próximas */
+  margin-bottom: 10px; /* Espaçamento reduzido */
 }
 
 .hero p {
-  font-size: 35px;
+  font-size: 30px; /* Ajustado para deixar as palavras mais próximas */
   color: #ffffff; /* Cor branca */
-  margin-top: -10px; /* Aproximação do texto com o título */
+  margin-top: -5px; /* Aproximação do texto com o título */
 }
 
 .buttons {
-  margin-top: 20px; /* Diminuição do espaçamento entre os botões e textos */
+  margin-top: 10px; /* Diminuição do espaçamento entre os botões e textos */
   display: flex;
   gap: 10px; /* Aproximação dos botões */
   justify-content: center;
