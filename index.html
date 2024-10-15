@@ -3,14 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AKon</title>
-    <link rel="stylesheet" href="home.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <title>Clone MEE6</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fonte do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Ícones do Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>AKon</h1>
-        <p>Bem-vindo ao site AKon!</p>
-    </div>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#">CloneMEE6</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Características</a></li>
+                    <li><a href="#">Planos</a></li>
+                    <li><a href="#">Suporte</a></li>
+                    <li><a href="#" class="btn-login">Login</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Melhore seu servidor Discord com nosso Bot</h1>
+                <p>Gerencie seu servidor Discord de forma fácil e eficiente com recursos avançados de moderação, níveis de experiência e muito mais.</p>
+                <a href="#" class="btn-primary">Adicione o Bot</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/500" alt="Bot do Discord">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Funcionalidades -->
+    <section class="features">
+        <div class="container">
+            <h2>Recursos Poderosos</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Moderação Automática</h3>
+                    <p>Mantenha seu servidor seguro com ferramentas de moderação automatizadas para gerenciar membros e conteúdo.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Sistema de Níveis</h3>
+                    <p>Incentive a participação dos membros com um sistema de níveis e recompensas personalizáveis.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Comandos Personalizados</h3>
+                    <p>Crie comandos únicos para atender às necessidades específicas do seu servidor.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bug"></i>
+                    <h3>Relatórios de Erros</h3>
+                    <p>Obtenha relatórios detalhados e suporte para resolver quaisquer problemas rapidamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Testemunhos -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>O que nossos usuários dizem</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"Este bot transformou meu servidor! A moderação automática é incrível e os membros adoram o sistema de níveis."</p>
+                    <h4>João Silva</h4>
+                    <span>Administrador do Servidor XYZ</span>
+                </div>
+                <div class="testimonial">
+                    <p>"Fácil de configurar e personalizar. Recomendo para qualquer administrador que queira melhorar a experiência no Discord."</p>
+                    <h4>Maria Oliveira</h4>
+                    <span>Fundadora do Grupo ABC</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#">CloneMEE6</a>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Suporte</a></li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <p>&copy; 2023 CloneMEE6. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script para Menu Responsivo -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
