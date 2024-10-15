@@ -3,4 +3,21 @@ body {
     padding: 0;
     background-color: #1e262a; /* Cor de fundo */
     height: 100vh; /* Altura total da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: 'Montserrat', sans-serif; /* Fonte */
+}
+
+h1 {
+    font-size: 80px; /* Tamanho da fonte */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra do texto */
+}
+
+p {
+    font-size: 24px; /* Tamanho do texto */
+    margin-top: 10px;
+    text-align: center;
 }
