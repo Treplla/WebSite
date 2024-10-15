@@ -1,10 +1,16 @@
 /* Estilos gerais */
-body {
-  font-family: 'Roboto', sans-serif;
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  background-color: #f4f4f9; /* Plano de fundo claro padrão */
+  font-family: 'Playpen Sans', sans-serif;
+  background-image: url('https://i.postimg.cc/ydrWn0W4/ef1de645ee5484ef4e58018295f1603c-4.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Estilos da Navbar */
@@ -15,10 +21,11 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  z-index: 1000;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .menu-icon {
@@ -37,12 +44,9 @@ body {
   color: white;
   font-size: 20px;
   cursor: pointer;
-  position: relative;
-  right: -30px; /* Ajuste aqui para mover o botão para a frente */
-}
-
-.theme-toggle i {
-  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Estilos da Sidebar */
@@ -51,104 +55,123 @@ body {
   color: white;
   position: fixed;
   top: 0;
-  left: -250px;
+  right: -250px;
   width: 250px;
   height: 100%;
   padding: 20px;
-  transition: left 0.3s ease;
-  z-index: 999; /* Garante que a sidebar fique acima do conteúdo principal */
+  transition: right 0.3s ease;
+  z-index: 999; /* Sidebar acima do conteúdo */
 }
 
 .sidebar.active {
-  left: 0;
+  right: 0;
 }
 
 .sidebar a {
   color: white;
   text-decoration: none;
+  margin: 10px 0;
   display: block;
-  padding: 10px 0;
-  font-size: 18px;
+  font-size: 1.2em;
 }
 
-.sidebar a:hover {
-  background-color: #444;
-}
-
-/* Estilos da Seção Hero */
+/* Estilos da Hero Section */
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100vh;
-  background: linear-gradient(to right, #1e90ff, #00bfff);
-  color: white;
-  text-align: center;
-  padding: 0 20px;
-  margin-top: 50px; /* Para garantir que o conteúdo não fique por baixo da navbar */
-}
-
-.hero h1 {
-  font-size: 64px;
-  margin: 0;
+  padding: 20px;
 }
 
 .hero h2 {
-  font-size: 36px;
+  font-size: 2em;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+  color: #007bff;
+  font-size: 8em;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
-  font-size: 24px;
+  font-size: 1.5em;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .buttons {
-  margin-top: 20px;
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
 .btn {
-  padding: 10px 20px;
-  font-size: 18px;
-  border-radius: 5px;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
   text-decoration: none;
-  color: white;
-  margin: 5px;
 }
 
 .btn-blue {
-  background-color: #1e90ff;
+  background-color: #007bff;
 }
 
 .btn-green {
   background-color: #28a745;
 }
 
-.btn:hover {
-  opacity: 0.8;
-}
-
-/* Estilo para o modo escuro */
+/* Modo escuro */
 .dark-mode {
-  background-color: #222;
-  color: white;
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 .dark-mode .navbar {
-  background-color: #444;
+  background-color: #333;
 }
 
 .dark-mode .sidebar {
   background-color: #333;
 }
 
-.dark-mode .hero {
-  background: linear-gradient(to right, #2c3e50, #4ca1af);
+.dark-mode .sidebar a {
+  color: #e0e0e0;
 }
 
-.dark-mode .btn-blue {
-  background-color: #3498db;
+.dark-mode .sidebar a:hover {
+  color: #bbb;
 }
 
-.dark-mode .btn-green {
-  background-color: #2ecc71;
+/* Media Queries para mobile */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 4em;
+  }
+
+  .hero h2 {
+    font-size: 1.5em;
+  }
+
+  .hero p {
+    font-size: 1.2em;
+  }
+
+  .navbar {
+    padding: 0 10px;
+  }
+
+  .navbar .logo {
+    font-size: 1.2em;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
 }
