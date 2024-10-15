@@ -1,32 +1,51 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #282c34;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
 }
 
 .container {
     text-align: center;
+    padding: 20px;
 }
 
-h1 {
-    font-size: 100px;
-    margin: 0;
-    color: #ff4757; /* Cor do número 404 */
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    margin: 20px 0;
 }
 
-h2 {
-    font-size: 24px;
-    margin: 10px 0;
+.dino {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 30px;
+    height: 30px;
+    background-color: #28a745;
 }
 
-p {
-    font-size: 16px;
+.cactus {
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+    width: 20px;
+    height: 40px;
+    background-color: #dc3545;
+    animation: move 2s infinite linear;
+}
+
+@keyframes move {
+    0% { right: -50px; }
+    100% { right: 100%; }
+}
+
+#score {
+    font-size: 20px;
 }
 
 .btn {
@@ -41,5 +60,5 @@ p {
 }
 
 .btn:hover {
-    background-color: #0056b3; /* Cor ao passar o mouse */
+    background-color: #0056b3;
 }
