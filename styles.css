@@ -15,14 +15,17 @@ body {
     z-index: 9999;
 }
 
-path, circle {
-    stroke-dasharray: 400;
-    stroke-dashoffset: 400;
-    animation: draw 2s forwards;
+path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 4s ease-in-out forwards;
 }
 
 @keyframes draw {
-    to {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
         stroke-dashoffset: 0;
     }
 }
