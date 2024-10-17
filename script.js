@@ -2,15 +2,21 @@
 
 // Configurações do Discord OAuth2
 const CLIENT_ID = '1259321234433376348'; // Substitua pelo seu Client ID
-const REDIRECT_URI = window.location.origin + window.location.pathname; // Redireciona para a mesma página
+const REDIRECT_URI = 'https://akon.pro'; // Atualizado para sua URL de produção
 const SCOPE = 'identify';
 const RESPONSE_TYPE = 'token';
+const OAUTH2_URL = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
+
+// Seletores de elementos
+const loginButton = document.getElementById('login-button');
+const userInfoDiv = document.getElementById('user-info');
+const menuIcon = document.getElementById('menu-icon');
+const sidebar = document.getElementById('sidebar');
 
 // Função para iniciar o processo de login com Discord
 function iniciarLoginDiscord() {
-  const discordAuthUrl = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
   // Redireciona o usuário para a página de autenticação do Discord
-  window.location.href = discordAuthUrl;
+  window.location.href = OAUTH2_URL;
 }
 
 // Função para extrair o token de acesso do URL
@@ -47,13 +53,13 @@ async function buscarUserInfo(token) {
 
 // Função para exibir as informações do usuário na navbar
 function mostrarUserInfo(user) {
-  const userInfoDiv = document.getElementById('user-info');
   userInfoDiv.innerHTML = `
     <img src="${user.avatarURL}" alt="Avatar">
     <span class="username">${user.username}</span>
-    <button id="logout-button" class="btn-discord">Logout</button>
+    <button id="logout-button" class="btn-discord"><i class="fas fa-sign-out-alt"></i> Logout</button>
   `;
-  
+
+  // Adiciona evento de logout
   document.getElementById('logout-button').addEventListener('click', logout);
 }
 
@@ -77,13 +83,13 @@ async function processarLogin() {
     // Verifica se já há informação do usuário no localStorage
     const userInfo = localStorage.getItem('user');
     const accessToken = localStorage.getItem('access_token');
-    
+
     if (userInfo && accessToken) {
       const user = JSON.parse(userInfo);
       mostrarUserInfo(user);
     } else {
       // Adiciona o event listener para o botão de login
-      document.getElementById('login-button').addEventListener('click', iniciarLoginDiscord);
+      loginButton.addEventListener('click', iniciarLoginDiscord);
     }
   }
 }
@@ -97,11 +103,11 @@ function logout() {
 
 // Alterna a sidebar
 function alternarSidebar() {
-  document.getElementById('sidebar').classList.toggle('active');
+  sidebar.classList.toggle('active');
 }
 
 // Inicialização quando o DOM está totalmente carregado
 document.addEventListener('DOMContentLoaded', () => {
   processarLogin();
-  document.getElementById('menu-icon').addEventListener('click', alternarSidebar);
+  menuIcon.addEventListener('click', alternarSidebar);
 });
