@@ -5,14 +5,18 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
 .corner-text {
-    color: white;
-    padding: 10px;
-    font-family: Arial, sans-serif;
+    color: #ffffff;
+    font-size: 1.2em;
+    text-align: right;
 }
 
 .highlight {
-    color: blue;
+    color: #3498db; /* Azul claro */
+    font-weight: bold;
 }
