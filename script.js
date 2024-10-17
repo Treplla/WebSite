@@ -9,9 +9,11 @@ const OAUTH2_URL = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_
 
 // Seletores de elementos
 const loginButton = document.getElementById('login-button');
+const loginButtonHero = document.getElementById('login-button-hero');
 const userInfoDiv = document.getElementById('user-info');
 const menuIcon = document.getElementById('menu-icon');
 const sidebar = document.getElementById('sidebar');
+const logoutContainer = document.getElementById('logout-container');
 
 // Função para iniciar o processo de login com Discord
 function iniciarLoginDiscord() {
@@ -56,11 +58,10 @@ function mostrarUserInfo(user) {
   userInfoDiv.innerHTML = `
     <img src="${user.avatarURL}" alt="Avatar">
     <span class="username">${user.username}</span>
-    <button id="logout-button" class="btn-discord"><i class="fas fa-sign-out-alt"></i> Logout</button>
   `;
-
-  // Adiciona evento de logout
-  document.getElementById('logout-button').addEventListener('click', logout);
+  
+  // Exibir o botão de Logout no menu lateral
+  logoutContainer.classList.remove('hidden');
 }
 
 // Função para processar o login após redirecionamento do Discord
@@ -88,8 +89,9 @@ async function processarLogin() {
       const user = JSON.parse(userInfo);
       mostrarUserInfo(user);
     } else {
-      // Adiciona o event listener para o botão de login
+      // Adiciona o event listener para os botões de login
       loginButton.addEventListener('click', iniciarLoginDiscord);
+      loginButtonHero.addEventListener('click', iniciarLoginDiscord);
     }
   }
 }
@@ -110,4 +112,10 @@ function alternarSidebar() {
 document.addEventListener('DOMContentLoaded', () => {
   processarLogin();
   menuIcon.addEventListener('click', alternarSidebar);
+  
+  // Adiciona o event listener para o botão de logout
+  const logoutButton = document.getElementById('logout-button');
+  if (logoutButton) {
+    logoutButton.addEventListener('click', logout);
+  }
 });
