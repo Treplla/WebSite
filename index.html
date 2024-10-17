@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Akon</title>
+  <title>Página Inicial - Akon</title>
   
   <!-- Pré-conexão com fontes do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,41 +26,50 @@
     <!-- Contêiner para itens à esquerda -->
     <div class="navbar-left">
       <div class="menu-icon" id="menu-icon">&#9776;</div>
-      <div id="user-info">
-        <!-- Botão de Login com Discord na navbar -->
-        <button id="login-button" class="btn-discord pulse"><i class="fab fa-discord"></i> Login com Discord</button>
-      </div>
     </div>
     
     <!-- Logo Centralizado -->
     <div class="logo"><span class="logo-akon-navbar">Akon</span></div>
-  </header>
-
-  <aside class="sidebar" id="sidebar">
-    <a href="/comandos.html"><i class="fas fa-list icon"></i> Comandos</a>
-    <!-- Outros links podem ser adicionados aqui -->
     
-    <!-- Botão de Logout -->
-    <div id="logout-container" class="hidden">
-      <button id="logout-button" class="btn-discord btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    <!-- Contêiner para itens à direita -->
+    <div class="navbar-right">
+      <!-- Botão de Login com Discord na navbar -->
+      <button id="login-button" class="btn-discord pulse">
+        <i class="fab fa-discord"></i> Login com Discord
+      </button>
+      
+      <!-- Informações do Usuário (aparece após o login) -->
+      <div id="user-info" class="hidden">
+        <img src="URL_DA_IMAGEM_DO_USUÁRIO" alt="Avatar do Usuário">
+        <span class="username">Nome do Usuário</span>
+      </div>
     </div>
-  </aside>
-
+  </header>
+  
+  <!-- Resto do conteúdo da página -->
   <section class="hero">
     <div class="hero-content">
-      <h2>Olá, eu sou o</h2>
-      <h1><span class="logo-akon-hero">Akon</span></h1>
-      <p>Um simples bot para o Discord</p>
+      <h2>Olá, eu sou o Akon</h2>
+      <h1>Akon</h1>
+      <p>Bem-vindo ao meu site!</p>
       <div class="buttons">
-        <a href="#adicionar" class="btn btn-blue">Me Adiciona</a>
-        <a href="#servidor" class="btn btn-green">Meu Servidor</a>
+        <a href="#" class="btn btn-blue">Me Adiciona</a>
+        <a href="#" class="btn btn-green">Meu Servidor</a>
       </div>
-      <!-- Removido o botão de Login da seção Hero -->
     </div>
   </section>
-
-  <!-- Link para o JavaScript externo -->
+  
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="#"><i class="fas fa-home icon"></i> Início</a>
+    <a href="#"><i class="fas fa-user icon"></i> Perfil</a>
+    <a href="#"><i class="fas fa-cog icon"></i> Configurações</a>
+    <div id="logout-container" class="hidden">
+      <button class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </div>
+  </div>
+  
+  <!-- Scripts JS -->
   <script src="scripts.js"></script>
-
 </body>
 </html>
