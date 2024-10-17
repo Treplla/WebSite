@@ -4,12 +4,8 @@ body, html {
   padding: 0;
   font-family: 'Playpen Sans', sans-serif;
   
-  /* Readicionado a imagem de fundo */
+  /* Imagem de fundo */
   background-image: url('https://i.postimg.cc/ydrWn0W4/ef1de645ee5484ef4e58018295f1603c-4.png');
-  
-  /* Opcional: Remova a cor de fundo se preferir apenas a imagem */
-  /* background-color: #1a1a1a; */
-  
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -51,7 +47,7 @@ body, html {
 
 /* Botão de Login com Discord Melhorado */
 .btn-discord {
-  background: linear-gradient(135deg, #5865F2, #4e54c8); /* Gradiente */
+  background: rgba(88, 101, 242, 0.7); /* Tornado mais transparente */
   color: #ffffff;
   border: none;
   padding: 12px 25px; /* Tamanho maior */
@@ -90,7 +86,7 @@ body, html {
 
 /* Hover e Active */
 .btn-discord:hover {
-  background: linear-gradient(135deg, #4752c4, #3b42b2);
+  background: rgba(88, 101, 242, 0.9); /* Menos transparente no hover */
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
@@ -157,6 +153,15 @@ body, html {
   margin-right: 10px;
 }
 
+/* Botão de Logout no Sidebar */
+#logout-container {
+  margin-top: 30px;
+}
+
+#logout-container.hidden {
+  display: none;
+}
+
 /* Seção Hero */
 .hero {
   display: flex;
@@ -172,8 +177,7 @@ body, html {
   margin: 0;
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  animation: fadeIn 2s ease-in-out 0.5s forwards;
+  opacity: 1; /* Garantir que esteja visível */
 }
 
 .hero h1 {
@@ -181,8 +185,7 @@ body, html {
   color: #ffffff;
   font-size: 6em;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  animation: fadeIn 2s ease-in-out 1s forwards, shakeVertical 2s ease-in-out 1s infinite;
+  opacity: 1; /* Garantir que esteja visível */
 }
 
 .hero p {
@@ -190,8 +193,7 @@ body, html {
   margin: 20px 0;
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  animation: fadeIn 2s ease-in-out 1.5s forwards;
+  opacity: 1; /* Garantir que esteja visível */
 }
 
 .buttons {
@@ -235,20 +237,20 @@ body, html {
 }
 
 #login-button-hero {
-  background: linear-gradient(135deg, #7289da, #5c6bc0); /* Diferente do botão na navbar para distinção */
+  background: rgba(114, 137, 218, 0.7); /* Tornado mais transparente */
   padding: 15px 30px;
   font-size: 1.3em;
   border-radius: 35px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 #login-button-hero i {
   font-size: 1.8em;
 }
 
-/* Hover e Active para o botão na Hero */
 #login-button-hero:hover {
-  background: linear-gradient(135deg, #5c6bc0, #4e54c8);
+  background: rgba(92, 107, 200, 0.9); /* Menos transparente no hover */
   transform: translateY(-4px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
 }
@@ -290,7 +292,7 @@ body, html {
     width: 220px;
   }
 
-  /* Ajustes para o botão de login */
+  /* Ajustes para os botões de login */
   .btn-discord {
     padding: 10px 20px;
     font-size: 1em;
@@ -313,4 +315,25 @@ body, html {
   #login-button-hero i {
     font-size: 1.5em;
   }
+}
+
+/* Animações */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shakeVertical {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shakeHorizontalLeft {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-15px); }
+}
+
+@keyframes shakeHorizontalRight {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(15px); }
 }
