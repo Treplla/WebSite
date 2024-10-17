@@ -25,68 +25,99 @@ body, html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
-  background-color: rgba(0, 0, 0, 0.7); /* Ajuste a opacidade conforme necessário */
+  height: 70px; /* Aumentado para acomodar melhor elementos */
+  background-color: rgba(0, 0, 0, 0.8); /* Aumentada opacidade para melhor contraste */
   display: flex;
   align-items: center;
-  padding: 0 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 0 30px; /* Espaçamento aumentado */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   color: #ffffff;
   justify-content: space-between; /* Ajusta a posição dos itens */
 }
 
 .navbar .menu-icon {
-  font-size: 1.5em;
+  font-size: 1.8em;
   color: #ffffff;
   cursor: pointer;
 }
 
 .navbar .logo {
   color: #ffffff;
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold;
+  letter-spacing: 2px;
 }
 
-/* Botão de Login com Discord */
+/* Botão de Login com Discord Melhorado */
 .btn-discord {
-  background-color: #5865F2; /* Cor padrão do Discord */
+  background: linear-gradient(135deg, #5865F2, #4e54c8); /* Gradiente */
   color: #ffffff;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1em;
+  padding: 12px 25px; /* Tamanho maior */
+  border-radius: 30px; /* Bordas arredondadas */
+  font-size: 1.1em;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
-  transition: background-color 0.3s;
+  gap: 12px;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1002; /* Garante que o botão fique acima de outros elementos */
 }
 
 .btn-discord i {
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
+/* Animação Pulse para chamar atenção */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(88, 101, 242, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(88, 101, 242, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(88, 101, 242, 0);
+  }
+}
+
+.btn-discord.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Hover e Active */
 .btn-discord:hover {
-  background-color: #4752c4;
+  background: linear-gradient(135deg, #4752c4, #3b42b2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-discord:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Avatar e nome do usuário após login */
 #user-info {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 #user-info img {
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
+  border: 2px solid #ffffff;
 }
 
 #user-info .username {
   color: #ffffff;
   font-weight: bold;
+  font-size: 1.1em;
 }
 
 /* Estilo da barra lateral */
@@ -113,8 +144,8 @@ body, html {
   display: block;
   color: #ffffff;
   text-decoration: none;
-  margin: 10px 0;
-  font-size: 1.2em;
+  margin: 15px 0;
+  font-size: 1.3em;
   transition: color 0.3s;
 }
 
@@ -132,54 +163,55 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 60px); /* Ajusta a altura para não sobrepor a barra */
+  height: calc(100vh - 70px); /* Ajusta a altura para não sobrepor a barra */
   padding: 20px;
 }
 
 .hero h2 {
-  font-size: 2em;
+  font-size: 2.5em;
   margin: 0;
   color: #ffffff;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
   opacity: 0;
   animation: fadeIn 2s ease-in-out 0.5s forwards;
 }
 
 .hero h1 {
-  margin: 10px 0;
-  color: #007bff;
-  font-size: 8em;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  margin: 15px 0;
+  color: #ffffff;
+  font-size: 6em;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
   opacity: 0;
   animation: fadeIn 2s ease-in-out 1s forwards, shakeVertical 2s ease-in-out 1s infinite;
 }
 
 .hero p {
-  font-size: 1.5em;
-  margin: 10px 0;
+  font-size: 1.8em;
+  margin: 20px 0;
   color: #ffffff;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
   opacity: 0;
   animation: fadeIn 2s ease-in-out 1.5s forwards;
 }
 
 .buttons {
-  margin-top: 30px;
+  margin-top: 40px;
   display: flex;
-  gap: 20px;
+  gap: 25px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .btn {
-  padding: 15px 30px;
-  border-radius: 8px;
-  font-size: 1em;
+  padding: 18px 35px; /* Tamanho maior */
+  border-radius: 10px;
+  font-size: 1.2em;
   font-weight: bold;
   color: #fff;
   text-decoration: none;
   display: inline-block;
-  transition: transform 0.6s, box-shadow 0.6s; /* Aumento do tempo da animação */
+  transition: transform 0.6s, box-shadow 0.6s;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-blue {
@@ -192,44 +224,52 @@ body, html {
   animation: shakeHorizontalRight 4s ease-in-out infinite;
 }
 
-.btn-blue:hover, .btn-green:hover {
+.btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Animações */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+/* Adicionando estilos para o botão de login na seção Hero */
+.login-hero {
+  margin-top: 40px;
 }
 
-@keyframes shakeVertical {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+#login-button-hero {
+  background: linear-gradient(135deg, #7289da, #5c6bc0); /* Diferente do botão na navbar para distinção */
+  padding: 15px 30px;
+  font-size: 1.3em;
+  border-radius: 35px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-@keyframes shakeHorizontalLeft {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(-10px); }
+#login-button-hero i {
+  font-size: 1.8em;
 }
 
-@keyframes shakeHorizontalRight {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(10px); }
+/* Hover e Active para o botão na Hero */
+#login-button-hero:hover {
+  background: linear-gradient(135deg, #5c6bc0, #4e54c8);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsividade */
+#login-button-hero:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsividade Aprimorada */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 4em;
   }
 
   .hero h2 {
-    font-size: 1.5em;
+    font-size: 1.8em;
   }
 
   .hero p {
-    font-size: 1.2em;
+    font-size: 1.4em;
   }
 
   .buttons {
@@ -238,21 +278,22 @@ body, html {
   }
 
   .navbar {
-    padding: 0 10px;
+    padding: 0 15px;
+    height: 60px;
   }
 
   .navbar .logo {
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
 
   .sidebar {
-    width: 200px;
+    width: 220px;
   }
 
   /* Ajustes para o botão de login */
   .btn-discord {
-    padding: 8px 16px;
-    font-size: 0.9em;
+    padding: 10px 20px;
+    font-size: 1em;
   }
 
   #user-info img {
@@ -261,6 +302,15 @@ body, html {
   }
 
   #user-info .username {
-    font-size: 0.9em;
+    font-size: 1em;
+  }
+
+  #login-button-hero {
+    padding: 12px 25px;
+    font-size: 1.1em;
+  }
+
+  #login-button-hero i {
+    font-size: 1.5em;
   }
 }
