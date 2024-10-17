@@ -1,348 +1,40 @@
-/* Reset e estilos básicos */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Playpen Sans', sans-serif;
-  
-  /* Container para a imagem de fundo sem alterar a opacidade */
-  position: relative;
-  min-height: 100vh;
-  color: #ffffff;
-  text-align: center;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Imagem de fundo */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://i.postimg.cc/ydrWn0W4/ef1de645ee5484ef4e58018295f1603c-4.png'); /* Substitua pela URL da imagem de alta qualidade */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  /* Mantida opacidade original */
-  z-index: -1;
-}
-
-/* Estilo da barra de navegação */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px; /* Altura da navbar */
-  background-color: rgba(0, 0, 0, 0.7); /* Opacidade da navbar (0.7 para 70%) */
-  display: flex;
-  align-items: center;
-  padding: 0 30px; /* Espaçamento lateral */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  color: #ffffff;
-  justify-content: space-between; /* Distribuição dos itens */
-}
-
-/* Contêiner à esquerda na navbar */
-.navbar-left {
-  display: flex;
-  align-items: center;
-  gap: 20px; /* Espaçamento entre os itens */
-}
-
-/* Ícone do Menu */
-.navbar .menu-icon {
-  font-size: 1.8em;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-/* Logo */
-.navbar .logo {
-  font-size: 2em;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-/* Texto "Akon" na Navbar em Branco */
-.logo-akon-navbar {
-  color: #ffffff; /* Branco */
-}
-
-/* Texto "Akon" na Seção Hero em Azul com Animação de Shake */
-.logo-akon-hero {
-  color: #3498db; /* Azul */
-  animation: shake 1s infinite;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-}
-
-/* Botão de Login com Discord Mais Transparente e Proeminente */
+/* Botão de Login com Discord Transparente Sem Borda */
 .btn-discord {
-  background: linear-gradient(135deg, rgba(114, 137, 218, 0.3), rgba(88, 101, 242, 0.3)); /* Gradiente mais transparente */
-  color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.3); /* Borda sutil */
-  padding: 12px 25px;
-  border-radius: 30px;
-  font-size: 1.1em;
+  background: transparent; /* Fundo transparente */
+  color: #ffffff; /* Cor do texto */
+  border: none; /* Remove a borda */
+  padding: 12px 25px; /* Mantém o padding existente */
+  border-radius: 30px; /* Mantém as bordas arredondadas */
+  font-size: 1.1em; /* Tamanho da fonte */
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 12px;
-  transition: background 0.3s, transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-  position: relative;
-  z-index: 1002; /* Garante que o botão fique acima de outros elementos */
-  backdrop-filter: blur(5px); /* Efeito de desfoque para mais transparência */
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  /* Remove box-shadow para manter a transparência */
+  box-shadow: none;
+  /* Remove backdrop-filter se não for necessário */
+  backdrop-filter: none;
+  
+  /* Novo: Adiciona uma leve margem à esquerda para reposicionar */
+  margin-left: 10px; /* Ajuste o valor conforme necessário */
 }
 
-.btn-discord i {
-  font-size: 1.5em;
-}
-
-/* Animação Pulse para chamar atenção */
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(114, 137, 218, 0.3);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(114, 137, 218, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(114, 137, 218, 0);
-  }
-}
-
-.btn-discord.pulse {
-  animation: pulse 2s infinite;
-}
-
-/* Hover e Active para o Botão de Login */
-.btn-discord:hover {
-  background: linear-gradient(135deg, rgba(114, 137, 218, 0.6), rgba(88, 101, 242, 0.6)); /* Menos transparente no hover */
-  border-color: rgba(255, 255, 255, 0.5); /* Borda mais visível no hover */
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-.btn-discord:active {
-  transform: translateY(0);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Botão de Logout Transparente com Texto e Ícone Vermelho */
-.btn-logout {
-  background: transparent; /* Fundo transparente */
-  color: #ff4d4d; /* Texto vermelho */
-  border: 2px solid rgba(255, 255, 255, 0.3); /* Borda sutil */
-}
-
-.btn-logout i {
-  color: #ff4d4d; /* Ícone vermelho */
-}
-
-/* Avatar e nome do usuário após login */
-#user-info img {
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  border: 2px solid #ffffff;
-}
-
-#user-info .username {
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-/* Estilo da barra lateral */
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 250px;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #ffffff;
-  transform: translateX(100%);
-  transition: transform 0.3s ease, background-color 0.3s;
-  z-index: 1001;
-  padding: 20px;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-}
-
-.sidebar.active {
-  transform: translateX(0);
-}
-
-.sidebar a {
-  display: block;
-  color: #ffffff;
-  text-decoration: none;
-  margin: 15px 0;
-  font-size: 1.3em;
-  transition: color 0.3s;
-}
-
-.sidebar a:hover {
-  color: #ddd;
-}
-
-.sidebar .icon {
-  margin-right: 10px;
-}
-
-/* Botão de Logout no Sidebar */
-#logout-container {
-  margin-top: 30px;
-}
-
-#logout-container.hidden {
-  display: none;
-}
-
-/* Seção Hero */
-.hero {
+/* Ajuste na classe .navbar-left para melhor posicionamento */
+.navbar-left {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: calc(100vh - 70px); /* Ajusta a altura para não sobrepor a barra */
-  padding: 20px;
+  gap: 20px; /* Espaçamento entre os itens */
+  
+  /* Adiciona padding à direita para evitar corte no botão */
+  padding-right: 10px; /* Ajuste conforme necessário */
 }
 
-.hero-content {
-  max-width: 800px;
-  text-align: center;
-}
-
-.hero h2 {
-  font-size: 2.5em;
-  margin: 0;
-  color: #ffffff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  opacity: 1; /* Garantir que esteja visível */
-}
-
-.hero h1 {
-  margin: 15px 0;
-  color: #ffffff;
-  font-size: 6em;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
-  opacity: 1; /* Garantir que esteja visível */
-}
-
-.hero p {
-  font-size: 1.8em;
-  margin: 20px 0;
-  color: #ffffff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  opacity: 1; /* Garantir que esteja visível */
-}
-
-.buttons {
-  margin-top: 40px;
+/* Opcional: Ajustar o contêiner #user-info para melhor alinhamento */
+#user-info {
   display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.btn {
-  padding: 18px 35px; /* Tamanho maior */
-  border-radius: 10px;
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-  display: inline-block;
-  transition: transform 0.6s, box-shadow 0.6s;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.btn-blue {
-  background-color: #007bff;
-  animation: shakeHorizontalLeft 4s ease-in-out infinite;
-}
-
-.btn-green {
-  background-color: #28a745;
-  animation: shakeHorizontalRight 4s ease-in-out infinite;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* Responsividade Aprimorada */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 4em;
-  }
-
-  .hero h2 {
-    font-size: 1.8em;
-  }
-
-  .hero p {
-    font-size: 1.4em;
-  }
-
-  .buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .navbar {
-    padding: 0 15px;
-    height: 60px;
-  }
-
-  .navbar .logo {
-    font-size: 1.5em;
-  }
-
-  .sidebar {
-    width: 220px;
-  }
-
-  /* Ajustes para os botões de login */
-  .btn-discord {
-    padding: 10px 20px;
-    font-size: 1em;
-  }
-
-  #user-info img {
-    width: 35px;
-    height: 35px;
-  }
-
-  #user-info .username {
-    font-size: 1em;
-  }
-
-  /* Ajuste para espaços menores na navbar-left */
-  .navbar-left {
-    gap: 10px;
-  }
-}
-
-/* Animações */
-@keyframes shakeHorizontalLeft {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-10px); }
-  75% { transform: translateX(10px); }
-}
-
-@keyframes shakeHorizontalRight {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(10px); }
-  75% { transform: translateX(-10px); }
-}
-
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+  align-items: center;
+  gap: 15px;
+  /* Remove margin-left: auto; se estiver empurrando demais */
+  margin-left: 0;
 }
