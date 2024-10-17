@@ -4,15 +4,28 @@ body, html {
   padding: 0;
   font-family: 'Playpen Sans', sans-serif;
   
-  /* Imagem de fundo */
-  background-image: url('https://i.postimg.cc/ydrWn0W4/ef1de645ee5484ef4e58018295f1603c-4.png');
+  /* Container para a imagem de fundo com overlay */
+  position: relative;
+  min-height: 100vh;
+  color: #ffffff;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Imagem de fundo */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.postimg.cc/ydrWn0W4/ef1de645ee5484ef4e58018295f1603c-4.png'); /* Substitua pela URL da imagem de alta qualidade */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  color: #ffffff;
-  text-align: center;
-  overflow: hidden; /* Evita rolagem devido à animação */
-  transition: background-color 0.3s, color 0.3s;
+  opacity: 0.7; /* Reduz a opacidade para 70% */
+  z-index: -1;
 }
 
 /* Estilo da barra de navegação */
@@ -45,22 +58,27 @@ body, html {
   letter-spacing: 2px;
 }
 
-/* Botão de Login com Discord Melhorado */
+.logo-akon {
+  color: #3498db; /* Azul para "Akon" */
+}
+
+/* Botão de Login com Discord Mais Bonito e Transparente */
 .btn-discord {
-  background: rgba(88, 101, 242, 0.7); /* Tornado mais transparente */
+  background: linear-gradient(135deg, rgba(114, 137, 218, 0.6), rgba(88, 101, 242, 0.6)); /* Gradiente transparente */
   color: #ffffff;
-  border: none;
-  padding: 12px 25px; /* Tamanho maior */
-  border-radius: 30px; /* Bordas arredondadas */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Borda sutil */
+  padding: 12px 25px;
+  border-radius: 30px;
   font-size: 1.1em;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 12px;
-  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 1002; /* Garante que o botão fique acima de outros elementos */
+  backdrop-filter: blur(5px); /* Efeito de desfoque para mais transparência */
 }
 
 .btn-discord i {
@@ -70,13 +88,13 @@ body, html {
 /* Animação Pulse para chamar atenção */
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(88, 101, 242, 0.7);
+    box-shadow: 0 0 0 0 rgba(114, 137, 218, 0.6);
   }
   70% {
-    box-shadow: 0 0 0 10px rgba(88, 101, 242, 0);
+    box-shadow: 0 0 0 10px rgba(114, 137, 218, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(88, 101, 242, 0);
+    box-shadow: 0 0 0 0 rgba(114, 137, 218, 0);
   }
 }
 
@@ -86,7 +104,8 @@ body, html {
 
 /* Hover e Active */
 .btn-discord:hover {
-  background: rgba(88, 101, 242, 0.9); /* Menos transparente no hover */
+  background: linear-gradient(135deg, rgba(114, 137, 218, 0.9), rgba(88, 101, 242, 0.9)); /* Menos transparente no hover */
+  border-color: rgba(255, 255, 255, 0.5); /* Borda mais visível no hover */
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
@@ -165,11 +184,15 @@ body, html {
 /* Seção Hero */
 .hero {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: calc(100vh - 70px); /* Ajusta a altura para não sobrepor a barra */
   padding: 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: center;
 }
 
 .hero h2 {
@@ -231,35 +254,6 @@ body, html {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Adicionando estilos para o botão de login na seção Hero */
-.login-hero {
-  margin-top: 40px;
-}
-
-#login-button-hero {
-  background: rgba(114, 137, 218, 0.7); /* Tornado mais transparente */
-  padding: 15px 30px;
-  font-size: 1.3em;
-  border-radius: 35px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-
-#login-button-hero i {
-  font-size: 1.8em;
-}
-
-#login-button-hero:hover {
-  background: rgba(92, 107, 200, 0.9); /* Menos transparente no hover */
-  transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
-}
-
-#login-button-hero:active {
-  transform: translateY(0);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
 /* Responsividade Aprimorada */
 @media (max-width: 768px) {
   .hero h1 {
@@ -305,15 +299,6 @@ body, html {
 
   #user-info .username {
     font-size: 1em;
-  }
-
-  #login-button-hero {
-    padding: 12px 25px;
-    font-size: 1.1em;
-  }
-
-  #login-button-hero i {
-    font-size: 1.5em;
   }
 }
 
