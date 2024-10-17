@@ -9,19 +9,22 @@ const OAUTH2_URL = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_
 
 // Seletores de elementos
 const loginButton = document.getElementById('login-button');
-const loginButtonHero = document.getElementById('login-button-hero');
+// Removido: loginButtonHero, pois o botão foi removido do HTML
 const userInfoDiv = document.getElementById('user-info');
 const menuIcon = document.getElementById('menu-icon');
 const sidebar = document.getElementById('sidebar');
 const logoutContainer = document.getElementById('logout-container');
 
-// Função para iniciar o processo de login com Discord
+/**
+ * Iniciar o processo de login com Discord
+ */
 function iniciarLoginDiscord() {
-  // Redireciona o usuário para a página de autenticação do Discord
   window.location.href = OAUTH2_URL;
 }
 
-// Função para extrair o token de acesso do URL
+/**
+ * Extrair o token de acesso do URL
+ */
 function obterTokenDoURL() {
   const hash = window.location.hash;
   if (hash) {
@@ -31,7 +34,9 @@ function obterTokenDoURL() {
   return null;
 }
 
-// Função para buscar informações do usuário no Discord
+/**
+ * Buscar informações do usuário no Discord
+ */
 async function buscarUserInfo(token) {
   try {
     const response = await fetch('https://discord.com/api/users/@me', {
@@ -53,7 +58,9 @@ async function buscarUserInfo(token) {
   }
 }
 
-// Função para exibir as informações do usuário na navbar
+/**
+ * Exibir as informações do usuário na navbar
+ */
 function mostrarUserInfo(user) {
   userInfoDiv.innerHTML = `
     <img src="${user.avatarURL}" alt="Avatar">
@@ -62,9 +69,14 @@ function mostrarUserInfo(user) {
   
   // Exibir o botão de Logout no menu lateral
   logoutContainer.classList.remove('hidden');
+
+  // Ocultar o botão de login após o login
+  if (loginButton) loginButton.style.display = 'none';
 }
 
-// Função para processar o login após redirecionamento do Discord
+/**
+ * Processar o login após redirecionamento do Discord
+ */
 async function processarLogin() {
   const token = obterTokenDoURL();
   if (token) {
@@ -89,29 +101,35 @@ async function processarLogin() {
       const user = JSON.parse(userInfo);
       mostrarUserInfo(user);
     } else {
-      // Adiciona o event listener para os botões de login
-      loginButton.addEventListener('click', iniciarLoginDiscord);
-      loginButtonHero.addEventListener('click', iniciarLoginDiscord);
+      // Adiciona o event listener para o botão de login na navbar
+      if (loginButton) loginButton.addEventListener('click', iniciarLoginDiscord);
+      // Removido: loginButtonHero, pois o botão foi removido
     }
   }
 }
 
-// Função para logout
+/**
+ * Realizar o logout
+ */
 function logout() {
   localStorage.removeItem('user');
   localStorage.removeItem('access_token');
   location.reload();
 }
 
-// Alterna a sidebar
+/**
+ * Alternar a visibilidade da sidebar
+ */
 function alternarSidebar() {
   sidebar.classList.toggle('active');
 }
 
-// Inicialização quando o DOM está totalmente carregado
+/**
+ * Inicialização quando o DOM está totalmente carregado
+ */
 document.addEventListener('DOMContentLoaded', () => {
   processarLogin();
-  menuIcon.addEventListener('click', alternarSidebar);
+  if (menuIcon) menuIcon.addEventListener('click', alternarSidebar);
   
   // Adiciona o event listener para o botão de logout
   const logoutButton = document.getElementById('logout-button');
