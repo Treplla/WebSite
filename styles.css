@@ -4,7 +4,7 @@ body, html {
   padding: 0;
   font-family: 'Playpen Sans', sans-serif;
   
-  /* Container para a imagem de fundo com overlay */
+  /* Container para a imagem de fundo sem alterar a opacidade */
   position: relative;
   min-height: 100vh;
   color: #ffffff;
@@ -24,7 +24,7 @@ body::before {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  /* Removida a opacidade da imagem */
+  /* Mantida opacidade original */
   z-index: -1;
 }
 
@@ -35,7 +35,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 70px; /* Altura da navbar */
-  background-color: rgba(0, 0, 0, 0.7); /* Ajuste de opacidade da navbar (0.7 para 70%) */
+  background-color: rgba(0, 0, 0, 0.7); /* Opacidade da navbar (0.7 para 70%) */
   display: flex;
   align-items: center;
   padding: 0 30px; /* Espaçamento lateral */
@@ -45,12 +45,21 @@ body::before {
   justify-content: space-between; /* Distribuição dos itens */
 }
 
+/* Contêiner à esquerda na navbar */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espaçamento entre os itens */
+}
+
+/* Ícone do Menu */
 .navbar .menu-icon {
   font-size: 1.8em;
   color: #ffffff;
   cursor: pointer;
 }
 
+/* Logo */
 .navbar .logo {
   font-size: 2em;
   font-weight: bold;
@@ -62,10 +71,10 @@ body::before {
   color: #ffffff; /* Branco */
 }
 
-/* Texto "Akon" na Seção Hero em Azul com Animação */
+/* Texto "Akon" na Seção Hero em Azul com Animação de Shake */
 .logo-akon-hero {
   color: #3498db; /* Azul */
-  animation: fadeIn 2s ease-in-out; /* Animação de fade in */
+  animation: shake 1s infinite;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
@@ -122,13 +131,18 @@ body::before {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Avatar e nome do usuário após login */
-#user-info {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+/* Botão de Logout Transparente com Texto e Ícone Vermelho */
+.btn-logout {
+  background: transparent; /* Fundo transparente */
+  color: #ff4d4d; /* Texto vermelho */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Borda sutil */
 }
 
+.btn-logout i {
+  color: #ff4d4d; /* Ícone vermelho */
+}
+
+/* Avatar e nome do usuário após login */
 #user-info img {
   border-radius: 50%;
   width: 45px;
@@ -307,30 +321,28 @@ body::before {
   #user-info .username {
     font-size: 1em;
   }
+
+  /* Ajuste para espaços menores na navbar-left */
+  .navbar-left {
+    gap: 10px;
+  }
 }
 
 /* Animações */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes shakeVertical {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
 @keyframes shakeHorizontalLeft {
   0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(-15px); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
 }
 
 @keyframes shakeHorizontalRight {
   0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(15px); }
+  25% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
 }
 
-/* Animação para o "Akon" na Seção Hero */
-.logo-akon-hero {
-  animation: fadeIn 2s ease-in-out infinite;
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
 }
