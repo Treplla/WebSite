@@ -41,19 +41,17 @@ body::before {
   background-color: rgba(0, 0, 0, 0.7); /* Opacidade de 70% */
   display: flex;
   align-items: center;
-  justify-content: center; /* Centraliza o logo */
+  justify-content: space-between; /* Distribui espaço entre os elementos */
   padding: 0 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   z-index: 1000;
 }
 
-/* Container Esquerdo na Navbar */
+/* Contêiner Esquerdo na Navbar */
 .navbar-left {
-  position: absolute;
-  left: 30px;
   display: flex;
   align-items: center;
-  gap: 20px; /* Espaçamento entre ícone e botão */
+  gap: 20px; /* Espaçamento entre ícone e outros itens se houver */
 }
 
 /* Ícone de Menu (Três Traços) */
@@ -74,6 +72,13 @@ body::before {
   color: #ffffff; /* Branco na Navbar */
 }
 
+/* Contêiner Direito na Navbar */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaçamento entre os itens */
+}
+
 /* Botão "Login com Discord" Transparente Sem Borda */
 .btn-discord {
   background: transparent; /* Fundo transparente */
@@ -89,7 +94,6 @@ body::before {
   transition: color 0.3s, transform 0.3s;
   box-shadow: none; /* Remove sombra */
   backdrop-filter: none; /* Remove desfoque */
-  margin-left: 10px; /* Reposiciona o botão */
 }
 
 .btn-discord i {
@@ -107,38 +111,30 @@ body::before {
   box-shadow: 0 0 0 2px #ffcc00; /* Sombra ao focar */
 }
 
-/* Animação Pulse para Chamar Atenção (Opcional, Removido quando o botão está transparente) */
-/*
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(114, 137, 218, 0.3);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(114, 137, 218, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(114, 137, 218, 0);
-  }
+/* Animação Vertical de Shake para o Texto "Akon" na Seção Hero */
+@keyframes vertical-shake {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-5px); }
+  75% { transform: translateY(5px); }
 }
-
-.btn-discord.pulse {
-  animation: pulse 2s infinite;
-}
-*/
 
 /* Container de Informações do Usuário */
 #user-info {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-left: 0; /* Remove deslocamento excessivo */
+  gap: 10px;
+  /* Inicialmente oculto */
+}
+
+#user-info.hidden {
+  display: none;
 }
 
 /* Avatar do Usuário */
 #user-info img {
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border: 2px solid #ffffff;
 }
 
@@ -242,7 +238,7 @@ body::before {
 }
 
 .hero h2 {
-  font-size: 2.5em;
+  font-size: 2em;
   margin: 0;
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
@@ -254,7 +250,7 @@ body::before {
   color: #3498db; /* Azul */
   font-size: 6em;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
-  animation: shake 1s infinite; /* Animação de shake */
+  animation: vertical-shake 2s infinite; /* Animação de shake vertical */
 }
 
 .hero p {
@@ -348,10 +344,9 @@ body::before {
     font-size: 1em;
   }
 
-  /* Ajuste para espaços menores na navbar-left */
-  .navbar-left {
+  /* Ajuste para espaços menores na navbar-right */
+  .navbar-right {
     gap: 10px;
-    padding-right: 5px;
   }
 
   /* Ajuste para botões na seção Hero */
@@ -362,13 +357,6 @@ body::before {
 }
 
 /* Animações */
-
-/* Shake para o Texto "Akon" na Seção Hero */
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
-}
 
 /* Shake Horizontal para Botões na Seção Hero */
 @keyframes shakeHorizontalLeft {
@@ -381,4 +369,11 @@ body::before {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(10px); }
   75% { transform: translateX(-10px); }
+}
+
+/* Shake Vertical para o Texto "Akon" na Seção Hero */
+@keyframes vertical-shake {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-5px); }
+  75% { transform: translateY(5px); }
 }
