@@ -9,7 +9,6 @@ const OAUTH2_URL = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_
 
 // Seletores de elementos
 const loginButton = document.getElementById('login-button');
-// Removido: loginButtonHero, pois o botão foi removido do HTML
 const userInfoDiv = document.getElementById('user-info');
 const menuIcon = document.getElementById('menu-icon');
 const sidebar = document.getElementById('sidebar');
@@ -103,7 +102,6 @@ async function processarLogin() {
     } else {
       // Adiciona o event listener para o botão de login na navbar
       if (loginButton) loginButton.addEventListener('click', iniciarLoginDiscord);
-      // Removido: loginButtonHero, pois o botão foi removido
     }
   }
 }
