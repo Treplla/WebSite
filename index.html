@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Página Inicial - Akon</title>
+  <title>Akon</title>
   
   <!-- Pré-conexão com fontes do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,12 +23,17 @@
 <body>
 
   <header class="navbar">
-    <div class="menu-icon" id="menu-icon">&#9776;</div>
-    <div class="logo"><span class="logo-akon-navbar">Akon</span></div>
-    <div id="user-info">
-      <!-- Botão de Login com Discord na navbar -->
-      <button id="login-button" class="btn-discord pulse"><i class="fab fa-discord"></i> Login com Discord</button>
+    <!-- Contêiner para itens à esquerda -->
+    <div class="navbar-left">
+      <div class="menu-icon" id="menu-icon">&#9776;</div>
+      <div id="user-info">
+        <!-- Botão de Login com Discord na navbar -->
+        <button id="login-button" class="btn-discord pulse"><i class="fab fa-discord"></i> Login com Discord</button>
+      </div>
     </div>
+    
+    <!-- Logo Centralizado -->
+    <div class="logo"><span class="logo-akon-navbar">Akon</span></div>
   </header>
 
   <aside class="sidebar" id="sidebar">
@@ -37,7 +42,7 @@
     
     <!-- Botão de Logout -->
     <div id="logout-container" class="hidden">
-      <button id="logout-button" class="btn-discord"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      <button id="logout-button" class="btn-discord btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
     </div>
   </aside>
 
