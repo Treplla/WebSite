@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Akon</title>
+  <title>Página Inicial - Akon</title>
   
   <!-- Pré-conexão com fontes do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,14 +26,19 @@
     <div class="menu-icon" id="menu-icon">&#9776;</div>
     <div class="logo">Akon</div>
     <div id="user-info">
-      <!-- O avatar e nome do usuário serão inseridos aqui após o login -->
-      <button id="login-button" class="btn-discord"><i class="fab fa-discord"></i> Login com Discord</button>
+      <!-- Botão de Login com Discord na navbar -->
+      <button id="login-button" class="btn-discord pulse"><i class="fab fa-discord"></i> Login com Discord</button>
     </div>
   </header>
 
   <aside class="sidebar" id="sidebar">
     <a href="/comandos.html"><i class="fas fa-list icon"></i> Comandos</a>
     <!-- Outros links podem ser adicionados aqui -->
+    
+    <!-- Botão de Logout -->
+    <div id="logout-container" class="hidden">
+      <button id="logout-button" class="btn-discord"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </div>
   </aside>
 
   <section class="hero">
@@ -44,10 +49,14 @@
       <a href="#adicionar" class="btn btn-blue">Me Adiciona</a>
       <a href="#servidor" class="btn btn-green">Meu Servidor</a>
     </div>
+    <!-- Botão de Login com Discord Prominente na região Hero -->
+    <div class="login-hero">
+      <button id="login-button-hero" class="btn-discord pulse"><i class="fab fa-discord"></i> Login com Discord</button>
+    </div>
   </section>
 
   <!-- Link para o JavaScript externo -->
-  <script src="script.js"></script>
+  <script src="scripts.js"></script>
 
 </body>
 </html>
