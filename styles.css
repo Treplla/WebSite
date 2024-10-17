@@ -24,7 +24,7 @@ body::before {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  opacity: 0.7; /* Reduz a opacidade para 70% */
+  /* Removida a opacidade da imagem */
   z-index: -1;
 }
 
@@ -34,15 +34,15 @@ body::before {
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px; /* Aumentado para acomodar melhor elementos */
-  background-color: rgba(0, 0, 0, 0.8); /* Aumentada opacidade para melhor contraste */
+  height: 70px; /* Altura da navbar */
+  background-color: rgba(0, 0, 0, 0.7); /* Ajuste de opacidade da navbar (0.7 para 70%) */
   display: flex;
   align-items: center;
-  padding: 0 30px; /* Espaçamento aumentado */
+  padding: 0 30px; /* Espaçamento lateral */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   z-index: 1000;
   color: #ffffff;
-  justify-content: space-between; /* Ajusta a posição dos itens */
+  justify-content: space-between; /* Distribuição dos itens */
 }
 
 .navbar .menu-icon {
@@ -52,19 +52,26 @@ body::before {
 }
 
 .navbar .logo {
-  color: #ffffff;
   font-size: 2em;
   font-weight: bold;
   letter-spacing: 2px;
 }
 
-.logo-akon {
-  color: #3498db; /* Azul para "Akon" */
+/* Texto "Akon" na Navbar em Branco */
+.logo-akon-navbar {
+  color: #ffffff; /* Branco */
 }
 
-/* Botão de Login com Discord Mais Bonito e Transparente */
+/* Texto "Akon" na Seção Hero em Azul com Animação */
+.logo-akon-hero {
+  color: #3498db; /* Azul */
+  animation: fadeIn 2s ease-in-out; /* Animação de fade in */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Botão de Login com Discord Mais Transparente e Proeminente */
 .btn-discord {
-  background: linear-gradient(135deg, rgba(114, 137, 218, 0.6), rgba(88, 101, 242, 0.6)); /* Gradiente transparente */
+  background: linear-gradient(135deg, rgba(114, 137, 218, 0.3), rgba(88, 101, 242, 0.3)); /* Gradiente mais transparente */
   color: #ffffff;
   border: 2px solid rgba(255, 255, 255, 0.3); /* Borda sutil */
   padding: 12px 25px;
@@ -88,7 +95,7 @@ body::before {
 /* Animação Pulse para chamar atenção */
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(114, 137, 218, 0.6);
+    box-shadow: 0 0 0 0 rgba(114, 137, 218, 0.3);
   }
   70% {
     box-shadow: 0 0 0 10px rgba(114, 137, 218, 0);
@@ -102,9 +109,9 @@ body::before {
   animation: pulse 2s infinite;
 }
 
-/* Hover e Active */
+/* Hover e Active para o Botão de Login */
 .btn-discord:hover {
-  background: linear-gradient(135deg, rgba(114, 137, 218, 0.9), rgba(88, 101, 242, 0.9)); /* Menos transparente no hover */
+  background: linear-gradient(135deg, rgba(114, 137, 218, 0.6), rgba(88, 101, 242, 0.6)); /* Menos transparente no hover */
   border-color: rgba(255, 255, 255, 0.5); /* Borda mais visível no hover */
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
@@ -321,4 +328,9 @@ body::before {
 @keyframes shakeHorizontalRight {
   0%, 100% { transform: translateX(0); }
   50% { transform: translateX(15px); }
+}
+
+/* Animação para o "Akon" na Seção Hero */
+.logo-akon-hero {
+  animation: fadeIn 2s ease-in-out infinite;
 }
