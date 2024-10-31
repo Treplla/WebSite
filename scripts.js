@@ -1,1 +1,4 @@
-// JavaScript pode ser adicionado aqui para futuras animações ou interações
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("show");
+}
