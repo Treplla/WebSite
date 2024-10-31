@@ -24,10 +24,11 @@ body {
 }
 
 img {
-    width: 1000px;
-    height: 1000px;
-    object-fit: cover; /* Mantém a proporção da imagem */
-    image-rendering: high-quality; /* Força a renderização em alta qualidade */
+    width: 100%; /* Ajusta ao contêiner */
+    height: auto;
+    max-height: 100%; /* Limita a altura */
+    object-fit: cover;
+    image-rendering: crisp-edges;
 }
 
 .text-container {
@@ -83,7 +84,7 @@ h3 {
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
     .image-container {
-        display: none; /* Oculta a imagem em dispositivos móveis */
+        display: none; /* Oculta a imagem no mobile */
     }
 
     .text-container {
