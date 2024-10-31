@@ -1,379 +1,56 @@
-/* Reset e Estilos Básicos */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+    background-color: #1f1e1e;
+    color: white;
+    font-family: 'Itim', cursive;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-body, html {
-  height: 100%;
-  font-family: 'Playpen Sans', sans-serif;
-  color: #ffffff;
-  text-align: center;
-  position: relative;
-  overflow-x: hidden;
-  transition: background-color 0.3s, color 0.3s;
+.text-container {
+    margin-left: 35%; /* Move o texto mais para a direita */
+    text-align: left;
+    padding: 20px;
 }
 
-/* Imagem de Fundo */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://i.postimg.cc/ydrWn0W4/ef1de645ee5484ef4e58018295f1603c-4.png'); /* Substitua pela URL da sua imagem */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  z-index: -1;
-  /* Mantida opacidade original */
+h1, h2, h3 {
+    margin: 0;
+    padding: 10px;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 1.5s forwards;
 }
 
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px;
-  background-color: rgba(0, 0, 0, 0.7); /* Opacidade de 70% */
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Distribui espaço entre os elementos */
-  padding: 0 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+h1 {
+    animation-delay: 0.5s;
 }
 
-/* Contêiner Esquerdo na Navbar */
-.navbar-left {
-  display: flex;
-  align-items: center;
-  gap: 20px; /* Espaçamento entre ícone e outros itens se houver */
+h2 {
+    color: #1941d1;
+    font-size: 2.5em;
+    animation-delay: 1s;
 }
 
-/* Ícone de Menu (Três Traços) */
-.menu-icon {
-  font-size: 1.8em;
-  color: #ffffff;
-  cursor: pointer;
+h3 {
+    animation-delay: 1.5s;
 }
 
-/* Logo Centralizado */
-.logo {
-  font-size: 2em;
-  font-weight: bold;
-  letter-spacing: 2px;
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-.logo-akon-navbar {
-  color: #ffffff; /* Branco na Navbar */
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Contêiner Direito na Navbar */
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* Espaçamento entre os itens */
-}
-
-/* Botão "Login com Discord" Transparente Sem Borda */
-.btn-discord {
-  background: transparent; /* Fundo transparente */
-  color: #ffffff; /* Cor do texto */
-  border: none; /* Remove a borda */
-  padding: 12px 25px; /* Padding */
-  border-radius: 30px; /* Bordas arredondadas */
-  font-size: 1.1em;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: color 0.3s, transform 0.3s;
-  box-shadow: none; /* Remove sombra */
-  backdrop-filter: none; /* Remove desfoque */
-}
-
-.btn-discord i {
-  font-size: 1.5em;
-}
-
-/* Efeitos de Hover e Focus para Botão "Login com Discord" */
-.btn-discord:hover {
-  color: #ffcc00; /* Cor do texto no hover */
-  transform: scale(1.05); /* Aumento de escala no hover */
-}
-
-.btn-discord:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #ffcc00; /* Sombra ao focar */
-}
-
-/* Animação Vertical de Shake para o Texto "Akon" na Seção Hero */
-@keyframes vertical-shake {
-  0%, 100% { transform: translateY(0); }
-  25% { transform: translateY(-5px); }
-  75% { transform: translateY(5px); }
-}
-
-/* Container de Informações do Usuário */
-#user-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  /* Inicialmente oculto */
-}
-
-#user-info.hidden {
-  display: none;
-}
-
-/* Avatar do Usuário */
-#user-info img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #ffffff;
-}
-
-/* Nome de Usuário */
-#user-info .username {
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 250px;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #ffffff;
-  transform: translateX(100%);
-  transition: transform 0.3s ease, background-color 0.3s;
-  z-index: 1001;
-  padding: 20px;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-}
-
-.sidebar.active {
-  transform: translateX(0);
-}
-
-.sidebar a {
-  display: flex;
-  align-items: center;
-  color: #ffffff;
-  text-decoration: none;
-  margin: 15px 0;
-  font-size: 1.3em;
-  transition: color 0.3s;
-}
-
-.sidebar a:hover {
-  color: #ddd;
-}
-
-.sidebar .icon {
-  margin-right: 10px;
-}
-
-/* Botão de Logout na Sidebar */
-#logout-container {
-  margin-top: 30px;
-}
-
-#logout-container.hidden {
-  display: none;
-}
-
-/* Botão "Logout" Transparente com Texto e Ícone Vermelho */
-.btn-logout {
-  background: transparent; /* Fundo transparente */
-  color: #ff4d4d; /* Texto vermelho */
-  border: none; /* Remove a borda */
-  padding: 12px 25px; /* Padding */
-  border-radius: 30px; /* Bordas arredondadas */
-  font-size: 1.1em;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.btn-logout i {
-  color: #ff4d4d; /* Ícone vermelho */
-  font-size: 1.5em;
-}
-
-/* Efeitos de Hover e Focus para Botão "Logout" */
-.btn-logout:hover {
-  color: #ff6666; /* Cor do texto no hover */
-  transform: scale(1.05); /* Aumento de escala no hover */
-}
-
-.btn-logout:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #ff6666; /* Sombra ao focar */
-}
-
-/* Seção Hero */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 70px); /* Altura ajustada para a navbar */
-  padding: 20px;
-}
-
-.hero-content {
-  max-width: 800px;
-  text-align: center;
-}
-
-.hero h2 {
-  font-size: 2em;
-  margin: 0;
-  color: #ffffff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  opacity: 1; /* Visível */
-}
-
-.hero h1 {
-  margin: 15px 0;
-  color: #3498db; /* Azul */
-  font-size: 6em;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
-  animation: vertical-shake 2s infinite; /* Animação de shake vertical */
-}
-
-.hero p {
-  font-size: 1.8em;
-  margin: 20px 0;
-  color: #ffffff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  opacity: 1; /* Visível */
-}
-
-/* Botões na Seção Hero */
-.buttons {
-  margin-top: 40px;
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.btn {
-  padding: 18px 35px; /* Tamanho maior */
-  border-radius: 10px;
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-  display: inline-block;
-  transition: transform 0.6s, box-shadow 0.6s;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.btn-blue {
-  background-color: #007bff;
-  animation: shakeHorizontalLeft 4s ease-in-out infinite;
-}
-
-.btn-green {
-  background-color: #28a745;
-  animation: shakeHorizontalRight 4s ease-in-out infinite;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* Responsividade Aprimorada */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 4em;
-  }
-
-  .hero h2 {
-    font-size: 1.8em;
-  }
-
-  .hero p {
-    font-size: 1.4em;
-  }
-
-  .buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .navbar {
-    padding: 0 15px;
-    height: 60px;
-  }
-
-  .navbar .logo {
-    font-size: 1.5em;
-  }
-
-  .sidebar {
-    width: 220px;
-  }
-
-  /* Ajustes para o botão "Login com Discord" */
-  .btn-discord {
-    padding: 10px 20px;
-    font-size: 1em;
-  }
-
-  #user-info img {
-    width: 35px;
-    height: 35px;
-  }
-
-  #user-info .username {
-    font-size: 1em;
-  }
-
-  /* Ajuste para espaços menores na navbar-right */
-  .navbar-right {
-    gap: 10px;
-  }
-
-  /* Ajuste para botões na seção Hero */
-  .btn {
-    padding: 15px 30px;
-    font-size: 1em;
-  }
-}
-
-/* Animações */
-
-/* Shake Horizontal para Botões na Seção Hero */
-@keyframes shakeHorizontalLeft {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-10px); }
-  75% { transform: translateX(10px); }
-}
-
-@keyframes shakeHorizontalRight {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(10px); }
-  75% { transform: translateX(-10px); }
-}
-
-/* Shake Vertical para o Texto "Akon" na Seção Hero */
-@keyframes vertical-shake {
-  0%, 100% { transform: translateY(0); }
-  25% { transform: translateY(-5px); }
-  75% { transform: translateY(5px); }
+img {
+    max-width: 100%;
+    height: auto;
 }
