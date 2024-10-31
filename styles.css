@@ -25,13 +25,14 @@ body {
 
 img {
     width: 100%; /* A imagem ocupa toda a largura do container */
-    height: 100%; /* A imagem ocupa toda a altura do container */
-    object-fit: cover; /* Cobre o container mantendo a proporção */
+    height: auto; /* Mantém a proporção */
+    max-height: 100%; /* Garante que a altura máxima não ultrapasse o contêiner */
+    object-fit: contain; /* Mantém a proporção da imagem sem cortá-la */
 }
 
 .text-container {
     flex: 1; /* O texto ocupa 50% da tela */
-    text-align: center;
+    text-align: center; /* Centraliza o texto */
 }
 
 h1, h2 {
@@ -78,7 +79,12 @@ h3 {
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
     .image-container {
-        display: none;
+        display: none; /* Oculta a imagem em dispositivos móveis */
+    }
+
+    .text-container {
+        flex: 1; /* Mantém o espaço do texto */
+        text-align: center; /* Centraliza o texto */
     }
 
     h1 {
