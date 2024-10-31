@@ -15,11 +15,13 @@
 .navbar-container {
     display: flex;
     align-items: center;
+    gap: 15px; /* Espaçamento entre o menu hambúrguer e o título */
 }
 
 .navbar-brand {
     font-size: 1.5em;
     font-weight: bold;
+    text-align: center; /* Centraliza o nome no container */
 }
 
 .hamburger {
@@ -28,9 +30,9 @@
     color: white;
     font-size: 1.5em;
     cursor: pointer;
-    display: none;
 }
 
+/* Oculta o menu no mobile */
 .navbar-menu {
     display: flex;
     gap: 15px;
@@ -57,7 +59,7 @@
         flex-direction: column;
         position: absolute;
         top: 60px;
-        right: 20px;
+        left: 20px;
         background-color: #2751e8;
         border-radius: 5px;
         padding: 10px;
