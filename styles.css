@@ -12,96 +12,6 @@ body {
 .container {
     display: flex;
     align-items: center;
-    gap: 60px; /* Aumenta o espaçamento entre a imagem e o texto */
-    padding: 20px;
-}
-
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-img {
-    max-width: 45vw; /* Aumenta a imagem para ocupar 45% da largura da tela */
-    height: auto;
-}
-
-.text-container {
-    text-align: center;
-    max-width: 50vw; /* Limita a largura do texto */
-}
-
-h1, h2 {
-    margin: 0;
-    padding: 10px;
-    opacity: 0;
-    transform: translateY(-30px);
-    animation: slideIn 1.5s forwards;
-}
-
-h1 {
-    font-size: 4em; /* Aumenta o tamanho do texto */
-    animation-delay: 0.5s;
-}
-
-h2 {
-    color: #1941d1;
-    font-size: 5em; /* Aumenta o tamanho do texto de Katrina */
-    animation-delay: 1s;
-}
-
-h3 {
-    font-size: 3em; /* Aumenta o tamanho do texto abaixo */
-    opacity: 0;
-    transform: translateY(30px);
-    animation: slideInUp 1.5s forwards;
-    animation-delay: 1.5s;
-}
-
-@keyframes slideIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Oculta a imagem em dispositivos móveis */
-@media (max-width: 768px) {
-    .image-container {
-        display: none;
-    }
-
-    h1, h2, h3 {
-        font-size: 2.5em; /* Ajusta o tamanho do texto para telas pequenas */
-    }
-
-    .text-container {
-        max-width: 90vw; /* Usa quase toda a largura da tela no mobile */
-    }
-}
-
-body {
-    background-color: #1f1e1e;
-    color: white;
-    font-family: 'Itim', cursive;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.container {
-    display: flex;
-    align-items: center;
     width: 100vw; /* Usa a largura total da tela */
     height: 100vh; /* Usa a altura total da tela */
 }
@@ -133,18 +43,18 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 4em; /* Aumenta o tamanho do texto */
+    font-size: 4em; /* Tamanho do texto em desktop */
     animation-delay: 0.5s;
 }
 
 h2 {
     color: #1941d1;
-    font-size: 5em; /* Aumenta o tamanho do texto de Katrina */
+    font-size: 5em; /* Tamanho do texto de Katrina em desktop */
     animation-delay: 1s;
 }
 
 h3 {
-    font-size: 3em; /* Aumenta o tamanho do texto abaixo */
+    font-size: 3em; /* Tamanho do texto abaixo em desktop */
     opacity: 0;
     transform: translateY(30px);
     animation: slideInUp 1.5s forwards;
@@ -165,14 +75,22 @@ h3 {
     }
 }
 
-/* Oculta a imagem em dispositivos móveis */
+/* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
     .image-container {
         display: none;
     }
 
-    h1, h2, h3 {
-        font-size: 2.5em; /* Ajusta o tamanho do texto para telas pequenas */
+    h1 {
+        font-size: 2em; /* Ajuste para o título */
+    }
+
+    h2 {
+        font-size: 2.5em; /* Ajuste para o nome Katrina */
+    }
+
+    h3 {
+        font-size: 1.5em; /* Ajuste para o texto abaixo */
     }
 
     .text-container {
