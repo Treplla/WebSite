@@ -1,75 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Akon</title>
-  
-  <!-- Pré-conexão com fontes do Google -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- Importação das fontes -->
-  <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome para ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
-  <!-- Link para o CSS externo -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katrina Bot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header class="navbar">
-    <!-- Contêiner para itens à esquerda -->
-    <div class="navbar-left">
-      <div class="menu-icon" id="menu-icon">&#9776;</div>
+    <div class="image-container">
+        <img src="https://i.postimg.cc/mtLxR4pC/image.png" alt="Imagem do Katrina">
     </div>
-    
-    <!-- Logo Centralizado -->
-    <div class="logo"><span class="logo-akon-navbar">Akon</span></div>
-    
-    <!-- Contêiner para itens à direita -->
-    <div class="navbar-right">
-      <!-- Botão de Login com Discord na navbar -->
-      <button id="login-button" class="btn-discord pulse">
-        <i class="fab fa-discord"></i> Login com Discord
-      </button>
-      
-      <!-- Informações do Usuário (aparece após o login) -->
-      <div id="user-info" class="hidden">
-        <img src="URL_DA_IMAGEM_DO_USUÁRIO" alt="Avatar do Usuário">
-        <span class="username">Nome do Usuário</span>
-      </div>
+    <div class="text-container">
+        <h1>Olá, eu sou a</h1>
+        <h2>Katrina</h2>
+        <h3>uma simples bot para o discord</h3>
     </div>
-  </header>
-  
-  <!-- Resto do conteúdo da página -->
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Olá, eu sou o Akon</h2>
-      <h1>Akon</h1>
-      <p>Bem-vindo ao meu site!</p>
-      <div class="buttons">
-        <a href="#" class="btn btn-blue">Me Adiciona</a>
-        <a href="#" class="btn btn-green">Meu Servidor</a>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <a href="#"><i class="fas fa-home icon"></i> Início</a>
-    <a href="#"><i class="fas fa-user icon"></i> Perfil</a>
-    <a href="#"><i class="fas fa-cog icon"></i> Configurações</a>
-    <div id="logout-container" class="hidden">
-      <button class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
-    </div>
-  </div>
-  
-  <!-- Scripts JS -->
-  <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
