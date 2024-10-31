@@ -14,6 +14,7 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
+    padding: 20px;
 }
 
 .image-container {
@@ -24,9 +25,9 @@ body {
 }
 
 img {
-    width: 100%; /* Ajusta ao contêiner */
+    width: 100%; 
     height: auto;
-    max-height: 100%; /* Limita a altura */
+    max-height: 100%; 
     object-fit: cover;
     image-rendering: crisp-edges;
 }
@@ -83,16 +84,20 @@ h3 {
 
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Organiza em coluna no mobile */
+        padding: 10px;
+    }
+
     .image-container {
         display: none; /* Oculta a imagem no mobile */
     }
 
     .text-container {
-        flex: 1;
+        max-width: 90vw;
         text-align: center;
         justify-content: center;
         align-items: center;
-        max-width: 90vw;
     }
 
     h1 {
