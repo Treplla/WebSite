@@ -3,22 +3,38 @@ body {
     color: white;
     font-family: 'Itim', cursive;
     display: flex;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
 }
 
-.text-container {
-    margin-left: 35%; /* Move o texto mais para a direita */
-    text-align: left;
-    padding: 20px;
+.container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaçamento entre a imagem e o texto */
 }
 
-h1, h2, h3 {
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 350px; /* Aumenta o tamanho da imagem */
+    height: auto;
+}
+
+.text-container {
+    text-align: center;
+}
+
+h1, h2 {
     margin: 0;
-    padding: 10px;
+    padding: 5px;
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateY(-30px);
     animation: slideIn 1.5s forwards;
 }
 
@@ -28,29 +44,28 @@ h1 {
 
 h2 {
     color: #1941d1;
-    font-size: 2.5em;
+    font-size: 3em; /* Aumenta o tamanho da fonte de Katrina */
     animation-delay: 1s;
 }
 
 h3 {
+    font-size: 1.5em; /* Aumenta o tamanho do texto abaixo */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInUp 1.5s forwards;
     animation-delay: 1.5s;
 }
 
 @keyframes slideIn {
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
-.image-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
