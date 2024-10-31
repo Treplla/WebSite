@@ -12,7 +12,7 @@ body {
 .container {
     display: flex;
     align-items: center;
-    gap: 40px; /* Espaçamento entre imagem e texto */
+    gap: 40px; /* Espaçamento entre a imagem e o texto */
     padding: 20px;
 }
 
