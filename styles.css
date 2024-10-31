@@ -12,27 +12,31 @@ body {
 .container {
     display: flex;
     align-items: center;
-    width: 100vw; /* Usa a largura total da tela */
-    height: 100vh; /* Usa a altura total da tela */
+    width: 100vw;
+    height: 100vh;
 }
 
 .image-container {
-    flex: 1; /* A imagem ocupa 50% da tela */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 img {
-    width: 100%; /* A imagem ocupa toda a largura do container */
-    height: auto; /* Mantém a proporção */
-    max-height: 100%; /* Garante que a altura máxima não ultrapasse o contêiner */
-    object-fit: contain; /* Mantém a proporção da imagem sem cortá-la */
+    width: 1000px;
+    height: 1000px;
+    object-fit: cover; /* Mantém a proporção da imagem */
+    image-rendering: high-quality; /* Força a renderização em alta qualidade */
 }
 
 .text-container {
-    flex: 1; /* O texto ocupa 50% da tela */
-    text-align: center; /* Centraliza o texto */
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1, h2 {
@@ -44,18 +48,18 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 4em; /* Tamanho do texto em desktop */
+    font-size: 4em;
     animation-delay: 0.5s;
 }
 
 h2 {
     color: #1941d1;
-    font-size: 5em; /* Tamanho do texto de Katrina em desktop */
+    font-size: 5em;
     animation-delay: 1s;
 }
 
 h3 {
-    font-size: 3em; /* Tamanho do texto abaixo em desktop */
+    font-size: 3em;
     opacity: 0;
     transform: translateY(30px);
     animation: slideInUp 1.5s forwards;
@@ -83,23 +87,22 @@ h3 {
     }
 
     .text-container {
-        flex: 1; /* Mantém o espaço do texto */
-        text-align: center; /* Centraliza o texto */
+        flex: 1;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        max-width: 90vw;
     }
 
     h1 {
-        font-size: 2em; /* Ajuste para o título */
+        font-size: 2em;
     }
 
     h2 {
-        font-size: 2.5em; /* Ajuste para o nome Katrina */
+        font-size: 2.5em;
     }
 
     h3 {
-        font-size: 1.5em; /* Ajuste para o texto abaixo */
-    }
-
-    .text-container {
-        max-width: 90vw; /* Usa quase toda a largura da tela no mobile */
+        font-size: 1.5em;
     }
 }
