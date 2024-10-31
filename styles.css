@@ -32,44 +32,6 @@
     cursor: pointer;
 }
 
-/* Oculta o menu no mobile */
-.navbar-menu {
-    display: flex;
-    gap: 15px;
-}
-
-.navbar-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
-}
-
-.navbar-menu a:hover {
-    text-decoration: underline;
-}
-
-/* Estilos mobile */
-@media (max-width: 768px) {
-    .hamburger {
-        display: inline;
-    }
-
-    .navbar-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 20px;
-        background-color: #2751e8;
-        border-radius: 5px;
-        padding: 10px;
-    }
-
-    .navbar-menu.show {
-        display: flex;
-    }
-}
-
 /* Estilos de corpo */
 body {
     background-color: #1f1e1e;
@@ -91,7 +53,7 @@ body {
     padding: 20px;
 }
 
-/* Restante do código continua igual */
+/* Estilos da imagem e do texto */
 .image-container {
     flex: 1;
     display: flex;
