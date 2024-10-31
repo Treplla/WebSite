@@ -1,3 +1,74 @@
+/* Barra de navegação */
+.navbar {
+    background-color: #2751e8;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.navbar-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: inline;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #2751e8;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .navbar-menu.show {
+        display: flex;
+    }
+}
+
+/* Estilos de corpo */
 body {
     background-color: #1f1e1e;
     color: white;
@@ -7,16 +78,18 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding-top: 60px; /* Compensa a barra de navegação */
 }
 
 .container {
     display: flex;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 60px); /* Ajusta a altura para a barra de navegação */
     padding: 20px;
 }
 
+/* Restante do código continua igual */
 .image-container {
     flex: 1;
     display: flex;
@@ -25,9 +98,9 @@ body {
 }
 
 img {
-    width: 100%; 
+    width: 100%;
     height: auto;
-    max-height: 100%; 
+    max-height: 100%;
     object-fit: cover;
     image-rendering: crisp-edges;
 }
@@ -82,15 +155,14 @@ h3 {
     }
 }
 
-/* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* Organiza em coluna no mobile */
+        flex-direction: column;
         padding: 10px;
     }
 
     .image-container {
-        display: none; /* Oculta a imagem no mobile */
+        display: none;
     }
 
     .text-container {
