@@ -16,7 +16,6 @@
     display: flex;
     align-items: center;
     width: 100%;
-    gap: 15px;
 }
 
 .navbar-brand {
@@ -30,6 +29,7 @@
     color: white;
     font-size: 1.5em;
     cursor: pointer;
+    margin-right: 15px;
 }
 
 .login-button {
@@ -37,14 +37,16 @@
     align-items: center;
     color: white;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.9em; /* Aumenta o tamanho do texto Login */
     gap: 8px;
     margin-left: auto;
-    margin-right: 20px; /* Espaçamento para evitar que o botão encoste na borda */
+    margin-right: 40px; /* Ajuste para deixar o botão mais à esquerda */
+    font-weight: bold;
 }
 
 .material-symbols-outlined {
-    font-size: 1.5em;
+    font-size: 1.7em; /* Aumenta o tamanho do ícone para combinar com o texto */
+    vertical-align: middle;
 }
 
 /* Estilos de corpo */
