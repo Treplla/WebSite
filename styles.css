@@ -138,20 +138,22 @@ h3 {
 
 /* Estilo do botão */
 .action-button {
-    background-color: #4CAF50; /* Verde */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #3caf3b; /* Verde */
     color: white;
-    border: none;
-    border-radius: 5px; /* Menos arredondado */
-    padding: 10px 20px; /* Altura reduzida */
-    font-size: 1.5em; /* Tamanho da fonte */
-    cursor: pointer;
-    margin-top: 20px; /* Espaçamento acima do botão */
-    transition: background-color 0.3s, transform 0.3s; /* Efeitos de transição */
+    font-size: 1.2em;
+    border: none; /* Remove a borda */
+    border-radius: 4px; /* Bordas levemente arredondadas */
+    margin-top: 20px; /* Espaço entre o texto e o botão */
+    text-decoration: none; /* Remove o sublinhado do link */
+    transition: background-color 0.3s ease;
 }
 
 .action-button:hover {
-    background-color: #45a049; /* Cor do botão ao passar o mouse */
-    transform: translateY(-2px); /* Leve movimento para cima */
+    background-color: #329a2d; /* Cor ao passar o mouse */
 }
 
 @media (max-width: 768px) {
