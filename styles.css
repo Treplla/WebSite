@@ -122,6 +122,23 @@ h3 {
     animation-delay: 1.5s;
 }
 
+/* Estilo do botão */
+.action-button {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Arredondado */
+    padding: 15px 30px; /* Espaçamento interno */
+    font-size: 1.5em; /* Tamanho da fonte */
+    cursor: pointer;
+    margin-top: 20px; /* Espaçamento acima do botão */
+    transition: background-color 0.3s; /* Efeito de transição */
+}
+
+.action-button:hover {
+    background-color: #45a049; /* Cor do botão ao passar o mouse */
+}
+
 @keyframes slideIn {
     to {
         opacity: 1;
