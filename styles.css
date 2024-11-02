@@ -162,11 +162,12 @@ h3 {
     margin-top: 20px; /* Espaço entre o texto e o botão */
     text-decoration: none; /* Remove o sublinhado do link */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Adiciona transição para o efeito neon */
+    position: relative;
 }
 
 .action-button:hover {
     background-color: #d6218c; /* Cor ao passar o mouse */
-    box-shadow: 0 0 10px #fe29a6, 0 0 15px #fe29a6; /* Efeito neon sutil */
+    box-shadow: 0 0 5px #fe29a6, 0 0 10px #fe29a6; /* Efeito neon suave */
 }
 
 .action-button:hover + .button-gif {
