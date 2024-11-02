@@ -132,11 +132,12 @@ h3 {
     font-size: 1.5em; /* Tamanho da fonte */
     cursor: pointer;
     margin-top: 20px; /* Espaçamento acima do botão */
-    transition: background-color 0.3s; /* Efeito de transição */
+    transition: background-color 0.3s, transform 0.3s; /* Efeitos de transição */
 }
 
 .action-button:hover {
     background-color: #45a049; /* Cor do botão ao passar o mouse */
+    transform: translateY(-2px); /* Leve movimento para cima */
 }
 
 @keyframes slideIn {
