@@ -166,7 +166,7 @@ h3 {
 
 .action-button:hover {
     background-color: #d6218c; /* Cor ao passar o mouse */
-    box-shadow: 0 0 20px #fe29a6, 0 0 30px #fe29a6, 0 0 40px #fe29a6; /* Efeito neon */
+    box-shadow: 0 0 10px #fe29a6, 0 0 15px #fe29a6; /* Efeito neon sutil */
 }
 
 .action-button:hover + .button-gif {
