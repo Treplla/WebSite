@@ -137,23 +137,40 @@ h3 {
 }
 
 /* Estilo do botão */
+.button-container {
+    position: relative; /* Permite que o GIF fique acima do botão */
+}
+
+.button-gif {
+    position: absolute;
+    width: 50px; /* Tamanho do GIF */
+    top: -60px; /* Ajuste a posição do GIF */
+    left: calc(50% - 25px); /* Centraliza o GIF em relação ao botão */
+    display: none; /* Oculta o GIF inicialmente */
+}
+
 .action-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 10px 20px;
-    background-color: #3caf3b; /* Verde */
+    background-color: #fe29a6; /* Cor do botão */
     color: white;
     font-size: 1.2em;
     border: none; /* Remove a borda */
     border-radius: 4px; /* Bordas levemente arredondadas */
     margin-top: 20px; /* Espaço entre o texto e o botão */
     text-decoration: none; /* Remove o sublinhado do link */
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Adiciona transição para o efeito neon */
 }
 
 .action-button:hover {
-    background-color: #329a2d; /* Cor ao passar o mouse */
+    background-color: #d6218c; /* Cor ao passar o mouse */
+    box-shadow: 0 0 20px #fe29a6, 0 0 30px #fe29a6, 0 0 40px #fe29a6; /* Efeito neon */
+}
+
+.action-button:hover + .button-gif {
+    display: block; /* Mostra o GIF ao passar o mouse sobre o botão */
 }
 
 @media (max-width: 768px) {
