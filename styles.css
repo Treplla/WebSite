@@ -143,9 +143,9 @@ h3 {
 
 .button-gif {
     position: absolute;
-    width: 50px; /* Tamanho do GIF */
-    top: -60px; /* Ajuste a posição do GIF */
-    left: calc(50% - 25px); /* Centraliza o GIF em relação ao botão */
+    width: 30px; /* Tamanho reduzido do GIF */
+    top: -40px; /* Ajuste a posição do GIF */
+    left: calc(50% - 15px); /* Centraliza o GIF em relação ao botão */
     display: none; /* Oculta o GIF inicialmente */
 }
 
